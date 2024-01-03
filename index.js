@@ -9,7 +9,11 @@ const app = express(),
 	PORT = process.env.PORT || 8000,
 	// FIXME: ???
 	server = createServer(app),
-	io = require("socket.io")(server);
+	io = require("socket.io")(server, {
+		cors: {
+			origin: "*",
+		},
+	});
 //#endregion
 
 //#region get method
